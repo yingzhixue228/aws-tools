@@ -13,10 +13,9 @@ import os
 import sys
 
 try:
-    from utils.aws.s3 import S3
-except ImportError:
-    sys.exit("ImportError: S3 could not be imported from utils.aws.s3."
-             " Please ensure 'utils' is on your PYTHONPATH")
+    from aws import S3
+except ImportError, e:
+    sys.exit("ImportError: '%s'. Please ensure module is installed and on your PYTHONPATH" % e)
 
 
 def main():
@@ -32,8 +31,8 @@ def main():
     except IndexError:
         sys.exit("You must supply a valid local directory for syncing to S3.")
 
-
     # SET UP AWS CONNECTION
+    #TODO:Use argparse to accept optional cli flag for aws_credentials.py file
     try:
         from aws_credentials import AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
     except ImportError:

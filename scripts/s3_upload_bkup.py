@@ -5,7 +5,7 @@ Local files not found in s3 will be uploaded.
 
 USAGE:
 
-    python s3_update.py /full/path/to/local/dir
+    python s3_update.py /full/path/to/local/dir /path/to/aws_credentials.py
 
 """
 import os
@@ -13,7 +13,6 @@ import sys
 
 from boto.s3.connection import S3Connection
 from boto.s3.key import Key
-
 
 # SET TARGET LOCAL DIRECTORY TO SYNC WITH S3
 try:
