@@ -1,0 +1,2 @@
+Tools for interacting with Amazon Web Services.
+So far, just some basic code for syncing local files to S3.
