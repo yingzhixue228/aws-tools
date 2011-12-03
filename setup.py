@@ -10,7 +10,7 @@ setup(name='aws-tools',
       license='MIT',
       packages=['aws'],
       scripts=['scripts/s3_upload.py'],
-      requires=['boto'],
+      install_requires=['boto'],
       classifiers=[
           'Environment :: Web Environment',
           'Intended Audience :: Developers',
